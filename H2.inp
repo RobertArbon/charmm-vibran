@@ -1,0 +1,90 @@
+    * Hydrogen test.  Makes custom H2 molecule
+*
+
+Faster off
+
+read rtf card
+!==============================================================================
+* Hydrogen molecule topology file
+*
+   41    1
+MASS    33 HA     1.00800 ! nonpolar H
+
+RESI HYD    .000   
+GROUP
+ATOM H1  HA   0.0
+ATOM H2  HA   0.0
+BOND H1  H2  
+
+PATC  FIRS NONE LAST NONE
+END
+!==============================================================================
+
+bomlev 0
+
+read param card
+!==============================================================================
+* Hydrogen parameter file
+*
+!------------------------------------------------------------------------------
+BOND
+!------------------------------------------------------------------------------
+! V(bond) = Kb(b - b0)**2
+!
+! Kb: kcal/mole/A**2
+! b0: A
+!
+! atom type Kb          b0
+!
+HA  HA     450.0   0.7408
+!------------------------------------------------------------------------------
+
+NONBONDED  nbxmod  5 ATOM CDIEL SWITCH VATOM VDISTANCE VSWITCH -
+     CUTNB 14.0  CTOFNB 12.0  CTONNB 10.0  EPS 1.0  E14FAC 1.0  WMIN 1.5
+!
+!V(Lennard-Jones) = Eps,i,j[(Rmin,i,j/ri,j)**12 - 2(Rmin,i,j/ri,j)**6]
+!
+!epsilon: kcal/mole, Eps,i,j = sqrt(eps,i * eps,j)
+!Rmin/2: A, Rmin,i,j = Rmin/2,i + Rmin/2,j
+!
+!atom  ignored    epsilon      Rmin/2   ignored   eps,1-4       Rmin/2,1-4
+!
+HA     0.000000  -0.046000     0.224500  
+END
+!==============================================================================
+
+read sequence card
+!==============================================================================
+* One hydrogen molecule 
+*
+1
+HYD
+!==============================================================================
+
+generate Hyd
+
+read coor card
+!==============================================================================
+* One hydrogen molecules
+*
+2
+    1    1 HYD  H1    0.00000   0.00000  0.00000
+    2    1 HYD  H2    0.42500   0.42500  0.60104
+!==============================================================================
+
+
+energy 
+
+open write unit 10 card name h2_hessian_finite.out
+open write unit 11 card name h2_hessian_analytic.out
+
+vibran
+write seco card fini tol 0.000000 unit 10
+write seco card unit 11
+end
+
+close unit 10 
+close unit 11
+
+
+stop

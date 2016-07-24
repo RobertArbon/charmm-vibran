@@ -1,0 +1,200 @@
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+           (CHARMM) - Developmental Version 41a2   February 15, 2016            
+                             Git commit ID 94a3dc9                              
+       Copyright(c) 1984-2014  President and Fellows of Harvard College
+                              All Rights Reserved
+     Current operating system: Darwin-14.5.0(x86_64)@eduroam-203-118.nomadi     
+                 Created on  7/24/16 at 13:46:00 by user: robert_arbon
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * HYDROGEN TEST.  MAKES CUSTOM H2 MOLECULE
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    Faster off
+ Hardwired Periodic Boundaries: 
+              Turned Off
+ MISCOM> FAST option: OFF (full feature routines)
+  
+ CHARMM>     
+  
+ CHARMM>    read rtf card
+ MAINIO> Residue topology file being read from unit   5.
+ RDTITL> * HYDROGEN MOLECULE TOPOLOGY FILE
+ RDTITL> *
+  
+ CHARMM>    !==============================================================================
+ CHARMM>     
+  
+ CHARMM>    bomlev 0
+  
+ CHARMM>     
+  
+ CHARMM>    read param card
+
+          PARAMETER FILE BEING READ FROM UNIT  5
+ RDTITL> * HYDROGEN PARAMETER FILE
+ RDTITL> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>    !==============================================================================
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ONE HYDROGEN MOLECULE
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    HYD
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          HYD 
+  
+ CHARMM>    !==============================================================================
+ CHARMM>     
+  
+ CHARMM>    generate Hyd
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ GENPSF> Segment   1 has been generated. Its identifier is HYD.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        2   Number of groups     =        1
+         Number of bonds         =        1   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * ONE HYDROGEN MOLECULES
+ RDTITL> *
+  
+ CHARMM>    !==============================================================================
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      1 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR        1 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      5.36603      0.00000     56.74170
+ENER INTERN>        5.36603      0.00000      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    open write unit 10 card name h2_hessian_finite.out
+ VOPEN> Attempting to open::h2_hessian_finite.out::
+ OPNLGU> Unit 10 opened for WRITE access to h2_hessian_finite.out
+  
+ CHARMM>    open write unit 11 card name h2_hessian_analytic.out
+ VOPEN> Attempting to open::h2_hessian_analytic.out::
+ OPNLGU> Unit 11 opened for WRITE access to h2_hessian_analytic.out
+  
+ CHARMM>     
+  
+ CHARMM>    vibran
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        1 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR        1 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ VIBRAN: Space allocated for     6 vectors of length     6
+  
+ VIBRAN>    write seco card fini tol 0.000000 unit 10
+ RDTITL> WRITE SECO CARD UNIT 11
+ RDTITL> No title read.
+VIBR ENR:  Eval#     ENERgy      Delta-E         GRMS
+VIBR INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ ----------       ---------    ---------    ---------    ---------    ---------
+VIBR>        1      5.36603      0.00000     56.74170
+VIBR INTERN>        5.36603      0.00000      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ WRITING THE SECOND DERIVATIVE MATRIX TO UNIT   10
+ VCLOSE: Closing unit   10 with status "KEEP"
+  
+ VIBRAN>    write seco card unit 11
+ RDTITL> END
+ RDTITL> No title read.
+VIBR ENR:  Eval#     ENERgy      Delta-E         GRMS
+VIBR INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ ----------       ---------    ---------    ---------    ---------    ---------
+VIBR>        1      5.36603      0.00000     56.74170
+VIBR INTERN>        5.36603      0.00000      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ WRITING THE SECOND DERIVATIVE MATRIX TO UNIT   11
+ VCLOSE: Closing unit   11 with status "KEEP"
+  
+ VIBRAN>    end
+  
+ CHARMM>     
+  
+ CHARMM>    close unit 10
+ CLOLGU>  *****  WARNING  ***** Attempt to close unit that was not open.
+  
+ CHARMM>    close unit 11
+ CLOLGU>  *****  WARNING  ***** Attempt to close unit that was not open.
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+   List time                       0.00 Other:            0.00
+      Nonbond force                   0.00 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.00 Other:            0.00
+   Energy time                     0.00 Other:            0.00
+ Total time                      0.04 Other:            0.04
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    NO WARNINGS WERE ISSUED
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.05  SECONDS 
+                         CPU TIME:     0.02  SECONDS 
